@@ -1,0 +1,7 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /consloe
+
+zk:
+  address: 127.0.0.1:2181

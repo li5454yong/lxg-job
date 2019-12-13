@@ -1,5 +1,6 @@
 package cn.lxgandlz.test;
 
+import cn.lxgandlz.core.zk.JobRegister;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -16,9 +17,9 @@ public class LxgJobTestApplication {
         SpringApplication.run(LxgJobTestApplication.class, args);
     }
 
-    @Bean
-    public ServletListenerRegistrationBean<InitListener> listenerRegistration(){
 
-        return new ServletListenerRegistrationBean<>(new InitListener());
+    @Bean
+    public JobRegister getRegister(){
+        return new JobRegister();
     }
 }
