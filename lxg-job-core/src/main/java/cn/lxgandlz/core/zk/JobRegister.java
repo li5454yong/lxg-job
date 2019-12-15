@@ -41,19 +41,25 @@ public class JobRegister {
         client.start();
     }
 
+
     /**
      * 向zk 中心注册客户端
      * @return zk 客户端
+     * 1、3rd获取人员接口添加是否在职筛选
+     * 2、3rd获取人员bug修改，调整返回数据解析格式
+     * 3、bpm根据规则获取办理人bug修改
+     * 4、流程设计、表单设计功能测试，bug回归
+     * 5、3rd接口文档重写
      */
     public void saveData(){
         try{
-            String path = "/job";
+            String path = "/job/child";
             Stat stat = this.client.checkExists().forPath(path);
 
             if(stat == null){
                 this.client.create().forPath(path);
             }
-            this.client.setData().forPath(path + "/child","192.168.0.1:9527".getBytes());
+            this.client.setData().forPath(path ,"192.168.0.1:9527".getBytes());
 
         }catch (Exception e){
             e.printStackTrace();

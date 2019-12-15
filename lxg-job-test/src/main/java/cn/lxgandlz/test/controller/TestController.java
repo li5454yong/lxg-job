@@ -1,6 +1,6 @@
 package cn.lxgandlz.test.controller;
 
-import cn.lxgandlz.core.zk.JobRegister;
+import cn.lxgandlz.core.zk.ZkClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +17,12 @@ public class TestController {
     Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @Resource
-    private JobRegister jobRegister;
+    private ZkClient zkClient;
 
     @GetMapping("getYaml")
     public void getYaml(){
 
-        jobRegister.saveData();
+        zkClient.register();
 
     }
 }

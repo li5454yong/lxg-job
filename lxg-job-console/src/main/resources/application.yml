@@ -3,5 +3,11 @@ server:
   servlet:
     context-path: /consloe
 
-zk:
-  address: 127.0.0.1:2181
+zookeeper:
+  server: 127.0.0.1:2181
+  sessionTimeoutMs: 6000
+  connectionTimeoutMs: 6000
+  maxRetries: 3
+  baseSleepTimeMs: 1000
+  group: console
+  nodeName: master

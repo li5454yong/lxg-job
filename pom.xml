@@ -11,6 +11,8 @@
     <modules>
         <module>lxg-job-core</module>
         <module>lxg-job-common</module>
+        <module>lxg-job-console</module>
+        <module>lxg-job-test</module>
     </modules>
 
     <name>lxg-job</name>
